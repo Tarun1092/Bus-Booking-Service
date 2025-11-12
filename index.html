@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusGo System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bus"></i>
+                <span>BusGo</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active" data-tab="home">Home</a>
+                <a href="#" class="nav-link" data-tab="search">Search Buses</a>
+                <a href="#" class="nav-link" data-tab="bookings" id="bookingsTab">My Bookings</a>
+                <a href="#" class="nav-link" id="authLink" data-tab="login">Login</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="tab-content active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Book Bus Tickets Across India</h1>
+                    <p>Travel to 1000+ destinations across Indian states with comfort and safety</p>
+                    <button class="cta-button" data-tab="search">Book Your Ticket Now</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Bus Travel">
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2>Why Choose Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Safe Travel</h3>
+                        <p>All our buses follow strict safety protocols</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-rupee-sign"></i>
+                        <h3>Best Prices</h3>
+                        <p>Guaranteed lowest prices across India</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Round the clock customer support</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Wide Network</h3>
+                        <p>Connecting major cities across India</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Popular Routes Section -->
+            <div class="popular-routes">
+                <h2>Popular Routes Across India</h2>
+                <div class="routes-grid">
+                    <div class="route-card" data-source="Delhi" data-destination="Jaipur">
+                        <h3>Delhi → Jaipur</h3>
+                        <p>Starting from ₹500</p>
+                        <small>Frequent buses available</small>
+                    </div>
+                    <div class="route-card" data-source="Mumbai" data-destination="Pune">
+                        <h3>Mumbai → Pune</h3>
+                        <p>Starting from ₹400</p>
+                        <small>Express services</small>
+                    </div>
+                    <div class="route-card" data-source="Bangalore" data-destination="Mysore">
+                        <h3>Bangalore → Mysore</h3>
+                        <p>Starting from ₹350</p>
+                        <small>Multiple operators</small>
+                    </div>
+                    <div class="route-card" data-source="Chennai" data-destination="Coimbatore">
+                        <h3>Chennai → Coimbatore</h3>
+                        <p>Starting from ₹600</p>
+                        <small>Overnight journeys</small>
+                    </div>
+                    <div class="route-card" data-source="Delhi" data-destination="Chandigarh">
+                        <h3>Delhi → Chandigarh</h3>
+                        <p>Starting from ₹700</p>
+                        <small>Luxury buses available</small>
+                    </div>
+                    <div class="route-card" data-source="Mumbai" data-destination="Goa">
+                        <h3>Mumbai → Goa</h3>
+                        <p>Starting from ₹900</p>
+                        <small>Coastal route</small>
+                    </div>
+                    <div class="route-card" data-source="Hyderabad" data-destination="Bangalore">
+                        <h3>Hyderabad → Bangalore</h3>
+                        <p>Starting from ₹700</p>
+                        <small>IT corridor</small>
+                    </div>
+                    <div class="route-card" data-source="Kolkata" data-destination="Bhubaneswar">
+                        <h3>Kolkata → Bhubaneswar</h3>
+                        <p>Starting from ₹600</p>
+                        <small>Eastern express</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login/Register Section -->
+        <section id="login" class="tab-content">
+            <div class="auth-container">
+                <div class="auth-form" id="loginForm">
+                    <h2>Login to Your Account</h2>
+                    <form id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="auth-button">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+                </div>
+
+                <div class="auth-form hidden" id="registerForm">
+                    <h2>Create New Account</h2>
+                    <form id="registerFormElement">
+                        <div class="form-group">
+                            <label for="registerName">Full Name</label>
+                            <input type="text" id="registerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPhone">Phone Number</label>
+                            <input type="tel" id="registerPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" required>
+                        </div>
+                        <button type="submit" class="auth-button">Register</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Buses Section -->
+        <section id="search" class="tab-content">
+            <div class="search-container">
+                <h2>Search Buses</h2>
+                <form id="searchForm">
+                    <div class="search-grid">
+                        <div class="form-group">
+                            <label for="source">From</label>
+                            <select id="source" required>
+                                <option value="">Select Source</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Lucknow">Lucknow</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Pune">Pune</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">To</label>
+                            <select id="destination" required>
+                                <option value="">Select Destination</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Mysore">Mysore</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Varanasi">Varanasi</option>
+                                <option value="Surat">Surat</option>
+                                <option value="Udaipur">Udaipur</option>
+                                <option value="Indore">Indore</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="journeyDate">Journey Date</label>
+                            <input type="date" id="journeyDate" min="2025-11-06" required>
+                        </div>
+                        <button type="submit" class="search-button">Search Buses</button>
+                    </div>
+                </form>
+
+                <div id="searchResults" class="search-results hidden">
+                    <h3>Available Buses</h3>
+                    <div id="busesList" class="buses-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seat Selection Section -->
+        <section id="seatSelection" class="tab-content hidden">
+            <div class="seat-container">
+                <h2>Select Your Seats</h2>
+                <div class="bus-layout">
+                    <div class="bus-driver">Driver</div>
+                    <div id="seatsGrid" class="seats-grid"></div>
+                </div>
+                <div class="seat-info">
+                    <div class="seat-legend">
+                        <div class="legend-item">
+                            <div class="seat available"></div>
+                            <span>Available</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat selected"></div>
+                            <span>Selected</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat occupied"></div>
+                            <span>Booked</span>
+                        </div>
+                    </div>
+                    <div class="booking-summary">
+                        <h3>Booking Summary</h3>
+                        <div id="summaryDetails"></div>
+                        <button id="confirmBooking" class="confirm-button">Confirm Booking</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Bookings Section -->
+        <section id="bookings" class="tab-content">
+            <div class="bookings-container">
+                <h2>My Bookings</h2>
+                <div id="bookingsList" class="bookings-list">
+                    <p class="no-bookings">Please login to view your bookings</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Confirmation Section -->
+        <section id="bookingConfirmation" class="tab-content hidden">
+            <div class="confirmation-container">
+                <div class="confirmation-card">
+                    <div class="confirmation-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Booking Confirmed!</h2>
+                    </div>
+                    <div id="confirmationDetails" class="confirmation-details"></div>
+                    <div class="confirmation-actions">
+                        <button id="downloadTicket" class="action-button primary">Download Ticket</button>
+                        <button id="newBooking" class="action-button secondary">Book Another Ticket</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BusGo</h3>
+                <p>Your trusted partner for bus travel across India</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: support@indianbusbooking.com</p>
+                <p>Phone: +91 1800-123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BusGo System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
